@@ -11,11 +11,12 @@ class Bag {
      * @param {number} weight - the weight of the bag
      */
     constructor(weight) {
-        if (!weight) {
-            throw new Error('bag must have a weight');
-        }
-        this.weight = weight;
+        this.weight = weight 
     }
-}
+  }
+   
+  const bag = new Bag(16) 
+  console.log(bag.weight) // 16
+
 
 module.exports = Bag;

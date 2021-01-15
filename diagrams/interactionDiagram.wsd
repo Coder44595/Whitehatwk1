@@ -1,0 +1,17 @@
+@startuml sequence 
+Customer --> ScooterHiringSystem: Login
+ScooterHiringSystem -> Customer: User ID and Pin provided
+Customer --> AutomatedSystem: Display scooters available for hire near me
+ScooterHiringSystem -> Customer: Input number of hire hours
+Customer --> Scooter:Input pin
+ScooterHiringSystem --> Scooter: Release scooter
+Customer --> Scooter: Ride scooter
+ScooterHiringSystem..> Customer: Alert Customer 5 minutes before time is up
+Scooter...> ScooterHiringSystem: Return Scooter
+Maintance ...> Mechanic: Are the any issues with scooter
+Mechanic ...> Maintance: No 
+Maintance...> ScooterHiringSystem: Charge scooter
+Mechanic ...> Maintance: If Yes
+Mechanic --> Scooter: Fix Scooter 
+Maintance...> ScooterHiringSystem: Charge scooter
+@endumld

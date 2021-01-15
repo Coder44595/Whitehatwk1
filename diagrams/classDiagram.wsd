@@ -1,0 +1,41 @@
+@startuml
+
+skinparam actorStyle awesome 
+class Scooter {
+        String name
+        int ChargePercentage
+        int scooterID 
+        int battery
+
+        string create()
+        void repair()
+        }
+
+class  Customer {
+        String name
+        int saleID 
+        int HireHours 
+
+        void ride()
+        void inspect()
+        void return()
+}
+        
+class  Maintance {
+        String ScooterLocation 
+        int ChargePercentage
+        
+        void charge()
+        void Check()
+        }
+        
+class ScooterHiringSystem {
+        String Login
+        string customerList
+        string faultyScooter
+        }
+
+ScooterHiringSystem "1" *-- "many" Scooter : composition 
+Customer o-- Scooter : agregation
+Maintance "1" *-- "many" Scooter : composition
+@enduml

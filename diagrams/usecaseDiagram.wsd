@@ -1,0 +1,34 @@
+@startuml
+left to right direction
+actor "Customer" as fc #Red
+actor "Mechanic" as mc #Blue
+boundary "Scooter" as sc #Gold
+rectangle ScooterHireSystem {
+  usecase "Login" as UC1 
+  usecase "Display Scooter Sation near me" as UC2
+  usecase "Input number of hire hours" as UC3
+  usecase "Input Pin" as UC4
+  usecase "Ride Scooter" as UC5
+  usecase "Return Scooter/charge" as UC6
+}
+left to right direction
+rectangle Maintenance {
+usecase "If scooter is not charging" as U1
+usecase "Repair" as U2
+usecase "Recharge" as U3
+
+
+}
+fc --> UC1
+UC2 ...> fc
+fc --> UC4
+fc --> UC5
+fc --> UC6 
+
+fc --> U1
+mc --> U2
+sc --> U2
+U1 ..> U2
+U3 <.. sc
+
+@enduml
